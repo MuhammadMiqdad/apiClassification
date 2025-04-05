@@ -18,7 +18,7 @@ export const classifyImage = async (filePath, mimeType) => {
 
   const promptConfig = [
     {
-      text: 'This is an image of trash. Please classify it (e.g., battery, metal, plastic, paper, organic, minyak jelanta, trash) This is a picture of garbage. Please classify it (e.g. battery, metal, plastic, paper, organic, used cooking oil, trash) \n describe it briefly \n Provide recommendations for processing the garbage briefly'
+      text: 'Ini adalah gambar sampah. Tolong klasifikasikan (misalnya baterai, kaca, logam, plastik, kertas, organik, minyak jelatah). \n jelaskan secara singkat \n berikan rekomendasi singkat untuk pengolahan sampah'
     },
     {
       inlineData: {
