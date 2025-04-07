@@ -18,7 +18,15 @@ export const classifyImage = async (filePath, mimeType) => {
 
   const promptConfig = [
     {
-      text: 'Ini adalah gambar sampah. Tolong klasifikasikan (misalnya baterai, kaca, logam, plastik, kertas, organik, minyak jelatah). \n jelaskan secara singkat \n berikan rekomendasi singkat untuk pengolahan sampah'
+      text: `Klasifikasikan gambar sampah ini dan berikan hasilnya dalam format teks dengan struktur seperti berikut: 
+      Jenis Klasifikasi Sampah: <pilih salah satu dari baterai / kaca / logam / plastik / kertas / organik / anorganik / minyak jelatah / barang elektronik>
+      Deskripsi: <deskripsi singkat tentang jenis sampah yang terdeteksi pada gambar>
+      Rekomendasi Pengolahan:
+      * <rekomendasi pengolahan pertama>
+      * <rekomendasi pengolahan kedua>
+      * <dst.>
+      
+      Gunakan bahasa Indonesia. Jangan memberikan penjelasan di luar format tersebut. Fokus pada satu jenis sampah yang paling dominan dalam gambar.`
     },
     {
       inlineData: {
