@@ -20,7 +20,7 @@ export const classifyImage = async (filePath, mimeType) => {
     {
       text: `Klasifikasikan gambar sampah ini dan berikan hasilnya dalam format teks dengan struktur seperti berikut: 
       Jenis Klasifikasi Sampah: <pilih salah satu dari baterai / kaca / logam / plastik / kertas / organik / anorganik / minyak jelatah / barang elektronik>
-      Deskripsi: <deskripsi singkat tentang jenis sampah yang terdeteksi pada gambar>
+      Deskripsi: <deskripsi tentang jenis sampah yang terdeteksi pada gambar>
       Rekomendasi Pengolahan:
       * <rekomendasi pengolahan pertama>
       * <rekomendasi pengolahan kedua>
