@@ -26,7 +26,7 @@ export const classifyImage = async (filePath, mimeType) => {
       * <rekomendasi pengolahan kedua>
       * <dst.>
       
-      Gunakan bahasa Indonesia. Jangan memberikan penjelasan di luar format tersebut. Fokus pada satu jenis sampah yang paling dominan dalam gambar.`
+      Gunakan bahasa Indonesia. Jangan memberikan penjelasan di luar format tersebut. Fokus pada satu jenis sampah yang paling dominan dalam gambar. dan jika tidak ada jenis sampah yg termasuk baterai / kaca / logam / plastik / kertas / organik / anorganik / minyak jelatah / barang elektronik kasih keterangan Maaf gambar yg anda berikan menunjukkan "misal kain atau kategori lain yg tidak ada di kategori klasifikasi tsb". Oleh karena itu, saya tidak dapat mengklasifikasikannya atau memberikan rekomendasi pengelolaan sampah . Silahkah beri gambar yg benar `
     },
     {
       inlineData: {
