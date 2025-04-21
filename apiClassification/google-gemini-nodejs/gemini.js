@@ -18,23 +18,27 @@ export const classifyImage = async (filePath, mimeType) => {
 
   const promptConfig = [
     {
-      text: `Klasifikasikan gambar sampah ini dan berikan hasilnya dalam format teks dengan struktur seperti berikut: 
-      Jenis Klasifikasi Sampah: <pilih salah satu dari baterai / kaca / logam / plastik / kertas / organik / anorganik / minyak jelatah / barang elektronik>
-      Deskripsi: <deskripsi tentang jenis sampah yang terdeteksi pada gambar>
-      Rekomendasi Pengolahan:
-      * <rekomendasi pengolahan pertama>
-      * <rekomendasi pengolahan kedua>
-      * <dst.>
-      
-      Gunakan bahasa Indonesia. Jangan memberikan penjelasan di luar format tersebut. Fokus pada satu jenis sampah yang paling dominan dalam gambar. dan jika tidak ada jenis sampah yg termasuk baterai / kaca / logam / plastik / kertas / organik / anorganik / minyak jelatah / barang elektronik kasih keterangan Maaf gambar yg anda berikan menunjukkan "misal kain atau kategori lain yg tidak ada di kategori klasifikasi tsb". Oleh karena itu, saya tidak dapat mengklasifikasikannya atau memberikan rekomendasi pengelolaan sampah . Silahkah beri gambar yg benar `
+      text: `Klasifikasikan gambar sampah ini dan berikan hasilnya dalam format teks dengan struktur seperti berikut:
+  
+  Jenis Klasifikasi Sampah: <pilih salah satu dari baterai / kaca / logam / plastik / kertas / organik / anorganik / minyak jelatah / barang elektronik>
+  Deskripsi: <deskripsi singkat dan umum tentang jenis sampah tersebut, seperti definisi atau karakteristik umum, tanpa mendeskripsikan kondisi gambar>
+  Rekomendasi Pengolahan:
+  * <rekomendasi pengolahan pertama>
+  * <rekomendasi pengolahan kedua>
+  * <dst.>
+  
+  Gunakan bahasa Indonesia. Jangan memberikan penjelasan di luar format tersebut. Fokus pada satu jenis sampah yang paling dominan dalam gambar. Jika tidak ada jenis sampah yang termasuk dalam daftar tersebut, berikan jawaban berikut:
+  
+  "Maaf gambar yang Anda berikan menunjukkan kategori yang tidak termasuk dalam klasifikasi sampah yang ditentukan. Oleh karena itu, saya tidak dapat mengklasifikasikannya atau memberikan rekomendasi pengelolaan sampah. Silakan unggah gambar yang sesuai."`
     },
     {
       inlineData: {
-        mimeType: mimeType, 
+        mimeType: mimeType,
         data: imageBase64,
       },
     },
   ];
+  
 
   const result = await geminiModel.generateContent({
     contents: [{ role: 'user', parts: promptConfig }],
